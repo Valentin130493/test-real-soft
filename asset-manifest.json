@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/real-soft/static/css/main.aec7d07f.css",
+    "main.js": "/real-soft/static/js/main.12409f31.js",
+    "static/js/787.b40248c6.chunk.js": "/real-soft/static/js/787.b40248c6.chunk.js",
+    "index.html": "/real-soft/index.html",
+    "main.aec7d07f.css.map": "/real-soft/static/css/main.aec7d07f.css.map",
+    "main.12409f31.js.map": "/real-soft/static/js/main.12409f31.js.map",
+    "787.b40248c6.chunk.js.map": "/real-soft/static/js/787.b40248c6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.aec7d07f.css",
+    "static/js/main.12409f31.js"
+  ]
+}
