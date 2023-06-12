@@ -1,0 +1,46 @@
+@import "src/styles/base/variables";
+
+.card {
+  display: flex;
+  margin-top: 8px;
+  background-color: rgba($grey-color, 0.2);
+  align-items: center;
+  justify-content: space-between;
+  padding: $padding-md;
+  border-radius: 8px;
+  cursor: pointer;
+  max-height: 40px;
+
+  img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .card_center {
+    display: flex;
+    max-width: 70%;
+
+    p {
+      color: $white-color;
+    }
+
+    h5 {
+    }
+  }
+}
+
+.clicked {
+  color: $white-color;
+  background: $blue-color;
+
+  p {
+    color: $white-color;
+  }
+}
+
+
+
+
+
+
+

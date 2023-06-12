@@ -1,0 +1,42 @@
+@import "styles/base/variables";
+
+
+.layout {
+  padding: $padding-xlL;
+
+  main {
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+
+    .input {
+      position: relative;
+      width: 50%;
+      input {
+        width: 100%;
+        padding: $padding-md;
+
+        &::placeholder {
+          color: $grey-color;
+          font-size: $font-size-p;
+        }
+      }
+      img {
+        position: absolute;
+        top: 25%;
+        right: 0;
+        width: 20px;
+        height: 20px;
+      }
+
+    }
+
+  }
+  .cards{
+    width: 50%;
+    padding:0 $padding-xl 0 0;
+    height: 70vh;
+    overflow-y: scroll;
+  }
+
+}

@@ -1,0 +1,39 @@
+@import "src/styles/base/variables";
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $padding-xl;
+  border-bottom: 2px $grey-color solid;
+
+  .box {
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 36px;
+      height: 36px;
+    }
+
+    h1 {
+      font-size: $font-size-h1;
+      margin-left: 8px;
+    }
+  }
+
+  button {
+    padding: $padding-xl;
+    color: $white-color;
+    background-color: $light-blue;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color .5s ease-in-out;
+
+    &:hover {
+      background-color: $blue-color;
+    }
+  }
+}

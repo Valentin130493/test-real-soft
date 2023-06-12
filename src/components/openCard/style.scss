@@ -1,0 +1,51 @@
+@import "src/styles/base/variables";
+
+.open_card {
+  max-width: 100%;
+  max-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+
+  .google {
+    aspect-ratio: 9/12;
+    height: 500px;
+    min-height: 300px;
+  }
+
+  .open_card__header {
+    display: flex;
+    justify-content: space-between;
+    padding: $padding-xl;
+
+    h3 {
+      text-transform: uppercase;
+    }
+  }
+
+  p {
+    max-width: 100%;
+    word-wrap: break-word;
+    padding: $padding-sx;
+  }
+
+  .links {
+    align-self: flex-end;
+
+    .add {
+      padding: $padding-md;
+      color: $blue-color;
+      text-align: end;
+      text-decoration: underline $blue-color;
+      cursor: pointer;
+    }
+
+    .remove {
+      padding: $padding-md;
+      color: $red-color;
+      text-align: end;
+      text-decoration: underline $red-color;
+      cursor: pointer;
+    }
+  }
+}
