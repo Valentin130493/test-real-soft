@@ -5,7 +5,7 @@ import {CardInterface} from "../../types";
 import {arrows, rightArrow} from "../../assets";
 
 import "./style.scss"
-import {getCard} from "../../store/reducers/cardReducer";
+import {getCard, setCard} from "../../store/reducers/cardReducer";
 import {useAppDispatch, useAppSelector} from "../../store/hooks";
 
 
@@ -13,25 +13,26 @@ interface CardProps {
     item: CardInterface
 }
 
-export const Card: React.FC<CardProps> = React.memo(({item}) => {
+export const Card: React.FC<CardProps> = ({item}) => {
 
     const {is_fav, short_desc, title, distance, id} = item
     const dispatch = useAppDispatch();
     const {card} = useAppSelector((state => state.card))
     const [clicked, setClicked] = React.useState<boolean>(false)
 
-    const handleCardClick = (e: React.MouseEvent, id: string) => {
+    const handleCardClick = React.useCallback((e: React.MouseEvent, id: string) => {
         e.preventDefault()
         e.stopPropagation()
         if (clicked) {
-            dispatch(getCard(null))
-
+            dispatch(setCard())
         } else {
             dispatch(getCard(id))
         }
         setClicked(!clicked)
-    }
-    React.useEffect(()=>{},[item])
+    },[clicked])
+
+    React.useEffect(() => {
+    }, [item])
 
     return (
         <div className={clicked && card?.id === id ? `card clicked` : 'card'} onClick={(e) => handleCardClick(e, id)}>
@@ -47,4 +48,4 @@ export const Card: React.FC<CardProps> = React.memo(({item}) => {
             <img src={rightArrow} alt="rightArrow"/>
         </div>
     );
-});
+}

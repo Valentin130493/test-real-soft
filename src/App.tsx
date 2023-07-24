@@ -35,7 +35,7 @@ export const App = () => {
     }
 
     if (error) {
-        return <p style={{color: 'red'}}>{error}</p>
+        return <p className={"error"}>{error}</p>
     }
 
 
@@ -43,10 +43,11 @@ export const App = () => {
         <div className={"layout"}>
             <Header onOpen={() => setOpen(true)}/>
             <main>
-                <div className={'input'}><input value={inputValue} placeholder={"Search"} onChange={handleInputChange}/>
+                <div className={'input'}>
+                    <input value={inputValue} placeholder={"Search"} onChange={handleInputChange}/>
                     <img src={search} alt="search"/>
                 </div>
-                <div style={{display: "flex", justifyContent: "space-between"}}>
+                <div className={"cards_section"} >
                     <div
                         className={"cards"}>{cards?.filter(item => item.title.includes(inputValue) || item.full_desc.includes(inputValue))?.map((item: CardInterface) => {
                         return <Card key={item.id}

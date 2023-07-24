@@ -38,6 +38,9 @@ export const cardsSlice = createSlice({
             const [card] = state.cards.filter((item => item.id === action.payload))
             state.card = card
         },
+        setCard:(state)=>{
+            state.card = null;
+        },
         setCardFav: (state, action) => {
             state.cards = state.cards.map((item) => {
                 if (item.id === action.payload.id) {
@@ -46,7 +49,12 @@ export const cardsSlice = createSlice({
                     return item
                 }
             })
-        }
+            const card = {...state.card, is_fav: action.payload.is_fav}
+            // @ts-ignore
+            state.card = card
+        },
+
+
     },
     extraReducers: (builder => {
         builder.addCase(getCards.pending, (state) => {
@@ -63,6 +71,6 @@ export const cardsSlice = createSlice({
     })
 })
 
-export const {addCard, getCard, setCardFav} = cardsSlice.actions
+export const {addCard, getCard, setCard, setCardFav} = cardsSlice.actions
 
 export default cardsSlice.reducer

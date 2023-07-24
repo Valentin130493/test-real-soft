@@ -19,9 +19,12 @@
   .card_center {
     display: flex;
     max-width: 70%;
-
+    position: relative;
     p {
-      color: $white-color;
+      color: $red-color;
+      position: absolute;
+      left: -20px;
+      font-size: $font-size-h1;
     }
 
     h5 {

@@ -13,8 +13,9 @@ interface OpenCardProps {
     card: CardInterface | null;
 }
 
-export const OpenCard: React.FC<OpenCardProps> = React.memo(({card}) => {
+export const OpenCard: React.FC<OpenCardProps> = ({card}) => {
     const dispatch = useAppDispatch()
+
     const handleRemove = () => {
         dispatch(setCardFav({is_fav: false, id: card?.id}))
     }
@@ -22,6 +23,8 @@ export const OpenCard: React.FC<OpenCardProps> = React.memo(({card}) => {
     const handleAdd = () => {
         dispatch(setCardFav({is_fav: true, id: card?.id}))
     }
+
+
     React.useEffect(() => {
     }, [card])
 
@@ -34,7 +37,7 @@ export const OpenCard: React.FC<OpenCardProps> = React.memo(({card}) => {
             <p>{card?.full_desc}</p>
 
             <div className={"google"}>
-                <MyMap markers={card?.markers}/>
+                <MyMap/>
             </div>
 
             <div className={"links"}>
@@ -43,4 +46,4 @@ export const OpenCard: React.FC<OpenCardProps> = React.memo(({card}) => {
             </div>
         </div>
     );
-});
+}

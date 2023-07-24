@@ -1,6 +1,7 @@
 import {initializeApp} from "firebase/app";
 import {initializeFirestore} from 'firebase/firestore';
 import {collection, getDocs, setDoc, doc} from "firebase/firestore";
+import {CardInterface} from "../types";
 
 
 const firebaseConfig = {
@@ -20,8 +21,8 @@ const db = initializeFirestore(app, {
 export const firebaseGetCards = async () => {
     try {
         const querySnapshot = await getDocs(collection(db, "cards"));
-        let data:any = []
-        querySnapshot.forEach(doc=>{
+        let data: any = []
+        querySnapshot.forEach(doc => {
             data.push(doc.data())
         })
         return data
@@ -32,11 +33,21 @@ export const firebaseGetCards = async () => {
 }
 
 
-export const firebaseAddCard = async (data:any)=>{
+export const firebaseAddCard = async (data: any) => {
     await setDoc(doc(db, "cards", `${data.title}`), {
         ...data
     });
 }
+
+export const firebaseUpdateMarkers = async (card: CardInterface | null, markers: any) => {
+    await setDoc(doc(db, "cards", `${card?.title}`), {
+        ...card,
+        markers: markers
+    });
+}
+
+
+
 
 
 
