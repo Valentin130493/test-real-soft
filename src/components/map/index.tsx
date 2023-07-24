@@ -1,9 +1,9 @@
 import React from 'react';
 
 import {GoogleMap, Marker, useJsApiLoader, Polyline} from "@react-google-maps/api";
-import {firebaseUpdateMarkers, mapSettings} from "../config";
-import {mapMarker} from "../assets";
-import {useAppSelector} from "../store/hooks";
+import {firebaseUpdateMarkers, mapSettings} from "../../config";
+import {mapMarker} from "../../assets";
+import {useAppSelector} from "../../store/hooks";
 
 const libraries: Array<"drawing" | "places" | "geometry"> = ['drawing', 'places', 'geometry'];
 

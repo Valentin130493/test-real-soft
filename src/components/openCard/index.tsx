@@ -1,7 +1,7 @@
 import React from 'react';
 import {DistanceConverter} from "../../helpers";
 import {CardInterface} from "../../types";
-import {MyMap} from "../../map";
+import {MyMap} from "../map";
 import {useAppDispatch} from "../../store/hooks";
 import {setCardFav} from "../../store/reducers/cardReducer";
 

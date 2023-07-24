@@ -4,12 +4,12 @@ import {v4 as uuidv4} from "uuid";
 import {DistanceConverter} from "../../helpers";
 import {useAppDispatch} from "../../store/hooks";
 import {addCard} from "../../store/reducers/cardReducer";
-
+import {MyMap} from "../map";
 
 import {close} from "../../assets";
 
 import "./style.scss"
-import {MyMap} from "../../map";
+
 
 
 interface MarkerType {
